@@ -1,6 +1,7 @@
 CREATE TABLE [Player](
     [Id] UNIQUEIDENTIFIER NOT NULL,
-    [Name] VARCHAR(70) NOT NULL,
+    [Name] VARCHAR(50) NOT NULL,
+    [Country] VARCHAR(30) NOT NULL,
     [BirthDate] DATE NOT NULL,
     [Position] VARCHAR(30) NOT NULL,
     [TeamId] UNIQUEIDENTIFIER

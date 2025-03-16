@@ -1,8 +1,10 @@
 CREATE TABLE [Coach](
     [Id] UNIQUEIDENTIFIER NOT NULL,
-    [Nationality] NVARCHAR(30) NOT NULL,
+    [Name] VARCHAR(50) NOT NULL,
+    [Country] NVARCHAR(30) NOT NULL,
     [BirthDate] DATE NOT NULL,
     [TeamId] UNIQUEIDENTIFIER NOT NULL
 
-    CONSTRAINT [PK_Coach] PRIMARY KEY ([Id])
+    CONSTRAINT [PK_Coach] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Coach_Team_TeamId] FOREIGN KEY ([TeamId]) REFERENCES [Team] ([Id])
 )

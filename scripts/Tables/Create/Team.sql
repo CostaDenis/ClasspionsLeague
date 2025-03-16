@@ -1,9 +1,7 @@
 CREATE TABLE [Team](
     [Id] UNIQUEIDENTIFIER NOT NULL,
     [Name] VARCHAR(50) NOT NULL,
-    [CoachId] UNIQUEIDENTIFIER NOT NULL,
     [Country] VARCHAR(30) NOT NULL
 
     CONSTRAINT [PK_Team] PRIMARY KEY([Id]),
-    CONSTRAINT [FK_Team_Coach_CoachId] FOREIGN KEY ([CoachId]) REFERENCES [Coach] ([Id])
 )

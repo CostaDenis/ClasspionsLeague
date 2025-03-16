@@ -1,0 +1,22 @@
+INSERT INTO [Team] VALUES
+
+    ('36b241c4-1555-49ef-b15a-f58307e82fb0', 'Real Madrid Club de Fútbol', 'Spain'),
+    ('fead7e9f-30c4-41f0-b401-889f90b776d7', 'Futbol Club Barcelona', 'Spain'),
+    ('8c29ce49-19b9-4fcd-b472-de8635932ca6', 'Club Atlético de Madrid', 'Spain'),
+    ('816ee5af-6fef-4fab-9ee9-4a699b4a059c', 'Athletic Club', 'Spain'),
+    ('6e4c3ecf-9694-4240-9364-549353e8ba92', 'Villarreal Club de Fútbol', 'Spain'),
+    ('bfa1d0d3-b2d0-4291-8c45-e716dd04bdc7', 'Real Betis Balompié', 'Spain'),
+    ('bd65ecf9-e1c5-4705-9888-c0be70a11028', 'Real Club Deportivo Mallorca', 'Spain'),
+    ('4e119d73-ee19-4acf-8d8f-6ad79eaf6856', 'Real Club Celta de Vigo', 'Spain'),
+    ('137761c1-9fc6-4efa-9d4a-069cea49d2af', 'Sevilla Fútbol Club', 'Spain'),
+    ('31101789-e8e5-4d68-b84b-e2d6fa35d793', 'Rayo Vallecano de Madrid', 'Spain'),
+    ('07eaac01-387f-41c4-aa5c-3ee76bea9913', 'Girona Futbol Club', 'Spain'),
+    ('d144b8a2-af81-487d-9d7b-85ec926baac6', 'Real Sociedad de Fútbol', 'Spain'),
+    ('c0b1dffa-f65f-478a-ba57-d854bf69be4b', 'Getafe Club de Fútbol', 'Spain'),
+    ('37ce9a38-9275-4131-9af9-6bc211468a67', 'Club Atlético Osasuna', 'Spain'),
+    ('a50ab7cc-9025-4841-a0c7-7d298bc3456a', 'Reial Club Deportiu Espanyol de Barcelona', 'Spain'),
+    ('20eaccc0-cd00-4d20-b5be-b8b2ce5e179e', 'Valencia Club de Fútbol', 'Spain'),
+    ('a85aea05-0a5c-4795-bfc6-5506cfbefc47', 'Deportivo Alavés', 'Spain'),
+    ('e78f10a4-4eb2-42f8-8f83-725fc8c9d554', 'Club Deportivo Leganés', 'Spain'),
+    ('bb3f497a-73eb-4493-a318-e9527e00c4e9', 'Unión Deportiva Las Palmas', 'Spain'),
+    ('83e60726-74de-4377-b704-faa2b77adb73', 'Real Valladolid Club de Fútbol', 'Spain')
