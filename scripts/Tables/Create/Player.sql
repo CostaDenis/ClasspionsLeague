@@ -7,5 +7,6 @@ CREATE TABLE [Player](
     [TeamId] UNIQUEIDENTIFIER
 
     CONSTRAINT [PK_Player] PRIMARY KEY([Id]),
-    CONSTRAINT [FK_Player_Team_TeamId] FOREIGN KEY ([TeamId]) REFERENCES [Team] ([Id])
+    CONSTRAINT [FK_Player_Team_TeamId] FOREIGN KEY ([TeamId]) REFERENCES [Team] ([Id]),
+    CONSTRAINT [UQ_Player_Id] UNIQUE ([Id])
 )

@@ -4,4 +4,5 @@ CREATE TABLE [Team](
     [Country] VARCHAR(30) NOT NULL
 
     CONSTRAINT [PK_Team] PRIMARY KEY([Id]),
+    CONSTRAINT [UQ_Team_Id] UNIQUE ([Id])
 )
