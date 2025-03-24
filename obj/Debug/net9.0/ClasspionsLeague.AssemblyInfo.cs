@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ClasspionsLeague")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c13eb71586922fb1a74629b10364bb4913eeca9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc17c429cb217a278e98dcb3fca2bb3898ae9950")]
 [assembly: System.Reflection.AssemblyProductAttribute("ClasspionsLeague")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ClasspionsLeague")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
