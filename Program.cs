@@ -1,4 +1,6 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using ClasspionsLeague.Repositories;
+using Microsoft.Data.SqlClient;
+using Models;
 
 namespace ClasspionsLeague
 {
@@ -10,12 +12,28 @@ namespace ClasspionsLeague
 
         static void Main()
         {
-
+            Console.Clear();
             using (var connection = new SqlConnection(connectionString))
             {
 
                 connection.Open();
-                Console.WriteLine("Conexão aberta!");
+
+                ReadTeams(connection); //teste
+
+                Console.Read();
+                Console.Clear();
+
+            }
+        }
+
+        public static void ReadTeams(SqlConnection connection)
+        {
+            var teamRepository = new Repository<Team>(connection);
+            var teams = teamRepository.Get();
+
+            foreach (var team in teams)
+            {
+                Console.WriteLine(team.Name);
             }
         }
 

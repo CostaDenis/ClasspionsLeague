@@ -1,6 +1,8 @@
+using Dapper.Contrib.Extensions;
+
 namespace Models
 {
-
+    [Table("[Coach]")]
     class Coach
     {
 
