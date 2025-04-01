@@ -17,6 +17,8 @@ namespace ClasspionsLeague.Screens.TeamScreens
             Console.WriteLine("2 - Cadastrar Time");
             Console.WriteLine("3 - Atualizar Time");
             Console.WriteLine("4 - Deletar Time");
+            Console.WriteLine("5 - Voltar ao menu principal");
+            Console.WriteLine("0 - Encerrar programa");
             Console.WriteLine();
             Console.WriteLine("-------------------");
 
@@ -39,6 +41,10 @@ namespace ClasspionsLeague.Screens.TeamScreens
 
                 case 4:
                     DeleteTeamScreen.Load();
+                    break;
+
+                case 0:
+                    Environment.Exit(0);
                     break;
 
                 default:

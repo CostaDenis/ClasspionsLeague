@@ -17,8 +17,6 @@ namespace ClasspionsLeague.Screens.TeamScreens
             Console.WriteLine("O que deseja fazer?");
             Console.WriteLine("1 - Listar todos os Times");
             Console.WriteLine("2 - Procurar Time por Id");
-            Console.WriteLine("3 - Procurar Time por Nome");
-            Console.WriteLine("4 - Procurar Time por País");
             Console.WriteLine("-------------------");
             var option = short.Parse(Console.ReadLine()!);
 
@@ -28,19 +26,20 @@ namespace ClasspionsLeague.Screens.TeamScreens
                     List();
                     break;
                 case 2:
-                    List();
+                    Console.WriteLine();
+                    Console.WriteLine("Digite o Id do time:");
+                    var id = Guid.Parse(Console.ReadLine()!);
+
+                    ListWithId(id);
                     break;
-                case 3:
-                    List();
-                    break;
-                case 4:
-                    List();
-                    break;
+
                 default:
                     Load();
                     break;
             }
 
+            Console.ReadKey();
+            Console.Clear();
             Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
             Console.ReadKey();
             TeamMenu.Load();
@@ -51,6 +50,7 @@ namespace ClasspionsLeague.Screens.TeamScreens
             var repository = new Repository<Team>(Database.Connection);
             var teams = repository.Get();
 
+            Console.Clear();
             foreach (var team in teams)
             {
                 Console.WriteLine($"Id: {team.Id}");
@@ -60,18 +60,18 @@ namespace ClasspionsLeague.Screens.TeamScreens
             }
         }
 
-        public static void List(Guid id)
+        public static void ListWithId(Guid id)
         {
             var repository = new Repository<Team>(Database.Connection);
-            var teams = repository.Get();
+            var team = repository.Get(id);
 
-            foreach (var team in teams)
-            {
-                Console.WriteLine($"Id: {team.Id}");
-                Console.WriteLine($"Nome: {team.Name}");
-                Console.WriteLine($"País: {team.Country}");
-                Console.WriteLine("-------------------");
-            }
+            Console.Clear();
+
+            Console.WriteLine($"Id: {team.Id}");
+            Console.WriteLine($"Nome: {team.Name}");
+            Console.WriteLine($"País: {team.Country}");
+
         }
+
     }
 }
