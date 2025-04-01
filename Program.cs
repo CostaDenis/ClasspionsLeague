@@ -1,4 +1,5 @@
 ﻿using ClasspionsLeague.Repositories;
+using ClasspionsLeague.Screens.TeamScreens;
 using Microsoft.Data.SqlClient;
 using Models;
 
@@ -7,23 +8,29 @@ namespace ClasspionsLeague
 
     class Program
     {
-        const string connectionString = @"Server=localhost,1433;Database=ClasspionsLeague;
+        const string CONNECTION_STRING = @"Server=localhost,1433;Database=ClasspionsLeague;
                                             User ID=sa;Password=1q2w3e4r@#$;TrustServerCertificate=True";
 
         static void Main()
         {
             Console.Clear();
-            using (var connection = new SqlConnection(connectionString))
-            {
+            Database.Connection = new SqlConnection(CONNECTION_STRING);
+            Database.Connection.Open();
+            // using (var connection = new SqlConnection(connectionString))
+            // {
 
-                connection.Open();
+            //     connection.Open();
 
-                ReadTeams(connection); //teste
+            //     ReadTeams(connection); //teste
 
-                Console.Read();
-                Console.Clear();
+            //     Console.Read();
+            //     Console.Clear();
 
-            }
+            // }
+
+            TeamMenu.Load();
+
+            Database.Connection.Close();
         }
 
         public static void ReadTeams(SqlConnection connection)
