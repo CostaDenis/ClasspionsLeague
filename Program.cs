@@ -28,7 +28,9 @@ namespace ClasspionsLeague
 
             // }
 
-            TeamMenu.Load();
+            // TeamMenu.Load();
+            PlayerMenu.Load();
+
 
             Database.Connection.Close();
         }
