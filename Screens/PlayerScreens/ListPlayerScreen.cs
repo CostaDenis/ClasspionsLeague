@@ -18,6 +18,7 @@ namespace ClasspionsLeague.Screens.PlayerScreens
             Console.WriteLine("O que deseja fazer?");
             Console.WriteLine("1 - Listar todos os Jogadores");
             Console.WriteLine("2 - Procurar Jogador por Id");
+            Console.WriteLine("3 - Procurar Jogadores de um time");
             Console.WriteLine("-------------------");
             var option = short.Parse(Console.ReadLine()!);
 
@@ -35,6 +36,19 @@ namespace ClasspionsLeague.Screens.PlayerScreens
                     }
                     ListWithId(id);
                     break;
+
+                case 3:
+                    Console.WriteLine("Digite o Id do time:");
+                    if (!Guid.TryParse(Console.ReadLine(), out var teamId))
+                    {
+                        Console.WriteLine("Id inválido!");
+                        Console.ReadKey();
+                        Console.Clear();
+                        Load();
+                    }
+                    ListWithTeam(teamId);
+                    break;
+
                 default:
                     Console.WriteLine("Opção inválida. Tente novamente.");
                     Console.ReadKey();
@@ -107,6 +121,39 @@ namespace ClasspionsLeague.Screens.PlayerScreens
             else
             {
                 Console.WriteLine("Jogador não encontrado.");
+            }
+
+            Console.WriteLine("");
+            Console.ReadKey();
+            Console.Clear();
+            PlayerMenu.Load();
+        }
+
+        public static void ListWithTeam(Guid id)
+        {
+
+            try
+            {
+                var repository = new PlayerRepository(Database.Connection);
+                var players = repository.GetByTeamId(id);
+
+                foreach (var player in players)
+                {
+                    Console.WriteLine($"Id: {player.Id}");
+                    Console.WriteLine($"Nome: {player.Name}");
+                    Console.WriteLine($"País: {player.Country}");
+                    Console.WriteLine($"Data de Nascimento: {player.BirthDate.ToString("dd/MM/yyyy")}");
+                    Console.WriteLine($"Posição: {player.Position}");
+                    Console.WriteLine($"Id do Time: {player.TeamId}");
+                    Console.WriteLine("-------------------");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao listar jogadores: {ex.Message}");
+                Console.ReadKey();
+                Console.Clear();
+                Load();
             }
 
             Console.WriteLine("");
