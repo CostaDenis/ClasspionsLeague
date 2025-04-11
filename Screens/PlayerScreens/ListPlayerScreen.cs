@@ -18,7 +18,8 @@ namespace ClasspionsLeague.Screens.PlayerScreens
             Console.WriteLine("O que deseja fazer?");
             Console.WriteLine("1 - Listar todos os Jogadores");
             Console.WriteLine("2 - Procurar Jogador por Id");
-            Console.WriteLine("3 - Procurar Jogadores de um time");
+            Console.WriteLine("3 - Procurar Jogador por Nome");
+            Console.WriteLine("4 - Procurar Jogadores de um time");
             Console.WriteLine("-------------------");
             var option = short.Parse(Console.ReadLine()!);
 
@@ -38,6 +39,18 @@ namespace ClasspionsLeague.Screens.PlayerScreens
                     break;
 
                 case 3:
+                    Console.WriteLine("Digite o nome do jogador:");
+                    var name = Console.ReadLine()!;
+                    if (string.IsNullOrEmpty(name))
+                    {
+                        Console.WriteLine("Nome inválido!");
+                        Console.ReadKey();
+                        Console.Clear();
+                        Load();
+                    }
+                    ListWithName(name);
+                    break;
+                case 4:
                     Console.WriteLine("Digite o Id do time:");
                     if (!Guid.TryParse(Console.ReadLine(), out var teamId))
                     {
@@ -136,6 +149,47 @@ namespace ClasspionsLeague.Screens.PlayerScreens
             {
                 var repository = new PlayerRepository(Database.Connection);
                 var players = repository.GetByTeamId(id);
+
+                Console.WriteLine("|-----------------------------|");
+                Console.WriteLine(" Jogadores disponíveis na base ");
+                Console.WriteLine("|-----------------------------|");
+
+                foreach (var player in players)
+                {
+                    Console.WriteLine($"Id: {player.Id}");
+                    Console.WriteLine($"Nome: {player.Name}");
+                    Console.WriteLine($"País: {player.Country}");
+                    Console.WriteLine($"Data de Nascimento: {player.BirthDate.ToString("dd/MM/yyyy")}");
+                    Console.WriteLine($"Posição: {player.Position}");
+                    Console.WriteLine($"Id do Time: {player.TeamId}");
+                    Console.WriteLine("-------------------");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao listar jogadores: {ex.Message}");
+                Console.ReadKey();
+                Console.Clear();
+                Load();
+            }
+
+            Console.WriteLine("");
+            Console.ReadKey();
+            Console.Clear();
+            PlayerMenu.Load();
+        }
+
+        public static void ListWithName(string name)
+        {
+
+            try
+            {
+                var repository = new PlayerRepository(Database.Connection);
+                var players = repository.GetByName(name);
+
+                Console.WriteLine("|----------------------------------|");
+                Console.WriteLine(" Jogadore(s) encontrado(s) na base ");
+                Console.WriteLine("|----------------------------------|");
 
                 foreach (var player in players)
                 {

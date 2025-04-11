@@ -117,6 +117,7 @@ namespace ClasspionsLeague.Screens.PlayerScreens
                     Console.Clear();
                     GetDataPlayer();
                 }
+                teamId = parsedTeamId;
             }
 
             return new Player
