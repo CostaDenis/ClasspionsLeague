@@ -15,7 +15,7 @@ namespace ClasspionsLeague.Repositories
 
         public List<Player> GetByTeamId(Guid teamId)
         {
-            var query = @"SELECT * FROM Player WHERE [TeamId] = @TeamId";
+            var query = @"SELECT * FROM [Player] WHERE [TeamId] = @TeamId";
             var players = _connection.Query<Player>(query, new { TeamId = teamId }).ToList<Player>();
 
             return players;

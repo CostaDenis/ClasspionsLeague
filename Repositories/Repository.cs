@@ -1,3 +1,5 @@
+using System.Linq;
+using Dapper;
 using Dapper.Contrib.Extensions;
 using Microsoft.Data.SqlClient;
 

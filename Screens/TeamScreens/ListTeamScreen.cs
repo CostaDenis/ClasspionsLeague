@@ -17,6 +17,7 @@ namespace ClasspionsLeague.Screens.TeamScreens
             Console.WriteLine("O que deseja fazer?");
             Console.WriteLine("1 - Listar todos os Times");
             Console.WriteLine("2 - Procurar Time por Id");
+            Console.WriteLine("2 - Procurar Time por Nome");
             Console.WriteLine("-------------------");
             var option = short.Parse(Console.ReadLine()!);
 
@@ -31,6 +32,18 @@ namespace ClasspionsLeague.Screens.TeamScreens
                     var id = Guid.Parse(Console.ReadLine()!);
 
                     ListWithId(id);
+                    break;
+                case 3:
+                    Console.WriteLine("Digite o nome do time:");
+                    var name = Console.ReadLine()!;
+                    if (string.IsNullOrEmpty(name))
+                    {
+                        Console.WriteLine("Nome inválido!");
+                        Console.ReadKey();
+                        Console.Clear();
+                        Load();
+                    }
+                    ListWithName(name);
                     break;
 
                 default:
@@ -90,6 +103,51 @@ namespace ClasspionsLeague.Screens.TeamScreens
             Console.Clear();
             TeamMenu.Load();
 
+        }
+
+        public static void ListWithName(string name)
+        {
+
+            try
+            {
+                var repository = new TeamRepository(Database.Connection);
+                var teams = repository.GetByName(name);
+
+                if (teams.Count == 0)
+                {
+                    Console.WriteLine("|-------------------------------------|");
+                    Console.WriteLine("    Nenhum time encontrado na base    ");
+                    Console.WriteLine("|-------------------------------------|");
+
+                    Console.ReadKey();
+                    Console.Clear();
+                    Load();
+                }
+
+                Console.WriteLine("|----------------------------------|");
+                Console.WriteLine("   Time(s) encontrado(s) na base   ");
+                Console.WriteLine("|----------------------------------|");
+
+                foreach (var team in teams)
+                {
+                    Console.WriteLine($"Id: {team.Id}");
+                    Console.WriteLine($"Nome: {team.Name}");
+                    Console.WriteLine($"País: {team.Country}");
+                    Console.WriteLine("-------------------");
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine($"Erro ao listar times");
+                Console.ReadKey();
+                Console.Clear();
+                Load();
+            }
+
+            Console.WriteLine("");
+            Console.ReadKey();
+            Console.Clear();
+            PlayerMenu.Load();
         }
 
     }
