@@ -15,7 +15,7 @@ namespace ClasspionsLeague.Screens.TeamScreens
             Console.WriteLine("Atualizando Time");
             Console.WriteLine("-------------------");
 
-            Console.WriteLine("Informe a Id do Time: ");
+            Console.WriteLine("Informe o Id correspondente do Time que irá atualizar: ");
             var id = Console.ReadLine()!;
             Console.WriteLine("Informe o nome do Time: ");
             var name = Console.ReadLine()!;

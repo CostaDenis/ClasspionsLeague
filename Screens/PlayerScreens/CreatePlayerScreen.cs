@@ -22,7 +22,7 @@ namespace ClasspionsLeague.Screens.PlayerScreens
 
         public static Player GetDataPlayer()
         {
-
+            Console.WriteLine();
             Console.WriteLine("Informe o nome do Jogador: ");
             var name = Console.ReadLine()!;
             if (string.IsNullOrEmpty(name))
@@ -32,6 +32,7 @@ namespace ClasspionsLeague.Screens.PlayerScreens
                 Console.Clear();
                 GetDataPlayer();
             }
+            Console.WriteLine();
 
             Console.WriteLine("Informe o País: ");
             var country = Console.ReadLine()!;
@@ -42,6 +43,7 @@ namespace ClasspionsLeague.Screens.PlayerScreens
                 Console.Clear();
                 GetDataPlayer();
             }
+            Console.WriteLine();
 
             Console.WriteLine("Informe a data de nascimento: ");
             var inputDate = Console.ReadLine()!;
@@ -58,7 +60,7 @@ namespace ClasspionsLeague.Screens.PlayerScreens
                 Console.Clear();
                 GetDataPlayer();
             }
-
+            Console.WriteLine();
 
             Console.WriteLine("Informe a posição: ");
             Console.WriteLine("1 - Goleiro");
@@ -86,6 +88,7 @@ namespace ClasspionsLeague.Screens.PlayerScreens
                     GetDataPlayer();
                     break;
             }
+            Console.WriteLine();
 
             var hasTeam = string.Empty;
             do
@@ -93,6 +96,7 @@ namespace ClasspionsLeague.Screens.PlayerScreens
                 Console.WriteLine("O jogador possui time? (S/N): ");
                 hasTeam = Console.ReadLine()!;
             } while (hasTeam.ToUpper() != "S" && hasTeam.ToUpper() != "N");
+            Console.WriteLine();
 
             Guid? teamId = null;
             if (hasTeam.ToUpper() == "S")
@@ -106,6 +110,7 @@ namespace ClasspionsLeague.Screens.PlayerScreens
                     Console.Clear();
                     GetDataPlayer();
                 }
+                Console.WriteLine();
 
                 var teamRepository = new Repository<Team>(Database.Connection);
                 var team = teamRepository.Get(parsedTeamId);
@@ -119,6 +124,7 @@ namespace ClasspionsLeague.Screens.PlayerScreens
                 }
                 teamId = parsedTeamId;
             }
+            Console.WriteLine();
 
             return new Player
             {

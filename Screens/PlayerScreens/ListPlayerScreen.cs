@@ -187,6 +187,17 @@ namespace ClasspionsLeague.Screens.PlayerScreens
                 var repository = new PlayerRepository(Database.Connection);
                 var players = repository.GetByName(name);
 
+                if (players.Count == 0)
+                {
+                    Console.WriteLine("|------------------------------------|");
+                    Console.WriteLine("  Nenhum jogador encontrado na base  ");
+                    Console.WriteLine("|------------------------------------|");
+
+                    Console.ReadKey();
+                    Console.Clear();
+                    Load();
+                }
+
                 Console.WriteLine("|----------------------------------|");
                 Console.WriteLine(" Jogadore(s) encontrado(s) na base ");
                 Console.WriteLine("|----------------------------------|");

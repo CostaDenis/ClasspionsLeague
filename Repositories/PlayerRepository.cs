@@ -22,8 +22,8 @@ namespace ClasspionsLeague.Repositories
         }
         public List<Player> GetByName(string name)
         {
-            var query = @"SELECT * FROM Player WHERE [Name] = @Name";
-            var players = _connection.Query<Player>(query, new { Name = name }).ToList<Player>();
+            var query = @"SELECT * FROM [Player] WHERE LTRIM(RTRIM([Name])) LIKE @Name";
+            var players = _connection.Query<Player>(query, new { Name = $"%{name}%" }).ToList<Player>();
 
             return players;
         }
