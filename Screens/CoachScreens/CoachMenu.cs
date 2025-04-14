@@ -1,7 +1,6 @@
-using ClasspionsLeague.Screens.CoachScreens;
 using ClasspionsLeague.Screens.PlayerScreens;
 
-namespace ClasspionsLeague.Screens.TeamScreens
+namespace ClasspionsLeague.Screens.CoachScreens
 {
 
     public static class CoachMenu
@@ -43,7 +42,7 @@ namespace ClasspionsLeague.Screens.TeamScreens
                     break;
 
                 case 4:
-                    DeletePlayerScreen.Load();
+                    DeleteCoachScreen.Load();
                     break;
 
                 case 0:

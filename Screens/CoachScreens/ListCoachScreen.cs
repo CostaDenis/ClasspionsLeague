@@ -1,5 +1,4 @@
 using ClasspionsLeague.Repositories;
-using ClasspionsLeague.Screens.TeamScreens;
 using Models;
 
 namespace ClasspionsLeague.Screens.CoachScreens
