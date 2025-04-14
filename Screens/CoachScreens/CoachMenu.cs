@@ -39,7 +39,7 @@ namespace ClasspionsLeague.Screens.TeamScreens
                     break;
 
                 case 3:
-                    UpdatePlayerScreen.Load();
+                    UpdateCoachScreen.Load();
                     break;
 
                 case 4:
