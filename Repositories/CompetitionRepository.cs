@@ -58,5 +58,11 @@ namespace ClasspionsLeague.Repositories
 
             return competitions;
         }
+
+        public void CreateCompetition(Competition competition)
+        {
+            var query = @"INSERT INTO [Competition] ([Id], [Name], [Country]) VALUES (@Id, @Name, @Country)";
+            _connection.Execute(query, competition);
+        }
     }
 }
