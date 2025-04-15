@@ -1,6 +1,6 @@
 CREATE TABLE[CompetitionTeam](
-    [IdCompetition] UNIQUEIDENTIFIER NOT NULL,
-    [IdTeam] UNIQUEIDENTIFIER NOT NULL
+    [CompetitionId] UNIQUEIDENTIFIER NOT NULL,
+    [TeamId] UNIQUEIDENTIFIER NOT NULL
 
-    CONSTRAINT [PK_CompetitionTeam] PRIMARY KEY ([IdCompetition], [IdTeam])
+    CONSTRAINT [PK_CompetitionTeam] PRIMARY KEY ([CompetitionId], [TeamId])
 )

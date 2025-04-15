@@ -3,9 +3,9 @@ using Dapper.Contrib.Extensions;
 namespace Models
 {
     [Table("[Competition]")]
-    class Competition
+    public class Competition
     {
-
+        [ExplicitKey]
         public Guid Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public string Country { get; set; } = string.Empty;
