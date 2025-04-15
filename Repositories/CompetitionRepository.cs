@@ -64,5 +64,11 @@ namespace ClasspionsLeague.Repositories
             var query = @"INSERT INTO [Competition] ([Id], [Name], [Country]) VALUES (@Id, @Name, @Country)";
             _connection.Execute(query, competition);
         }
+
+        public void UpdateCompetition(Competition competition)
+        {
+            var query = @"UPDATE [Competition] SET [Name] = @Name, [Country] = @Country WHERE [Id] = @Id";
+            _connection.Execute(query, competition);
+        }
     }
 }

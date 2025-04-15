@@ -39,7 +39,7 @@ namespace ClasspionsLeague.Screens.CompetitionScreens
                     break;
 
                 case 3:
-                    // UpdatePlayerScreen.Load();
+                    UpdateCompetitionScreen.Load();
                     break;
 
                 case 4:
