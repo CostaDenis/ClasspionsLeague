@@ -43,7 +43,7 @@ namespace ClasspionsLeague.Screens.CompetitionScreens
                     break;
 
                 case 4:
-                    // DeletePlayerScreen.Load();
+                    DeleteCompetitionScreen.Load();
                     break;
 
                 case 0:
