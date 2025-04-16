@@ -1,5 +1,6 @@
 ﻿using ClasspionsLeague.Repositories;
 using ClasspionsLeague.Screens.CoachScreens;
+using ClasspionsLeague.Screens.CompetitionScreens;
 using ClasspionsLeague.Screens.TeamScreens;
 using Microsoft.Data.SqlClient;
 using Models;
@@ -31,7 +32,8 @@ namespace ClasspionsLeague
 
             // TeamMenu.Load();
             // PlayerMenu.Load();
-            CoachMenu.Load();
+            // CoachMenu.Load();
+            CompetitionMenu.Load();
 
 
             Database.Connection.Close();
