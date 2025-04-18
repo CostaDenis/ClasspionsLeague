@@ -53,7 +53,6 @@ namespace ClasspionsLeague.Screens.TeamScreens
 
             Console.ReadKey();
             Console.Clear();
-            Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
             Console.ReadKey();
             TeamMenu.Load();
         }
@@ -65,9 +64,9 @@ namespace ClasspionsLeague.Screens.TeamScreens
 
             Console.Clear();
 
-            Console.WriteLine("|-----------------------------|");
-            Console.WriteLine("   Time disponíveis na base   ");
-            Console.WriteLine("|-----------------------------|");
+            Console.WriteLine("|------------------------------|");
+            Console.WriteLine("   Times disponíveis na base   ");
+            Console.WriteLine("|------------------------------|");
 
             foreach (var team in teams)
             {
@@ -90,9 +89,9 @@ namespace ClasspionsLeague.Screens.TeamScreens
 
             Console.Clear();
 
-            Console.WriteLine("|----------------------------|");
+            Console.WriteLine("|-----------------------------|");
             Console.WriteLine("    Time encontrado na base    ");
-            Console.WriteLine("|----------------------------|");
+            Console.WriteLine("|-----------------------------|");
 
             Console.WriteLine($"Id: {team.Id}");
             Console.WriteLine($"Nome: {team.Name}");
@@ -147,7 +146,7 @@ namespace ClasspionsLeague.Screens.TeamScreens
             Console.WriteLine("");
             Console.ReadKey();
             Console.Clear();
-            PlayerMenu.Load();
+            TeamMenu.Load();
         }
 
     }

@@ -1,5 +1,3 @@
-using ClasspionsLeague.Screens.PlayerScreens;
-
 namespace ClasspionsLeague.Screens.CoachScreens
 {
 
@@ -44,12 +42,18 @@ namespace ClasspionsLeague.Screens.CoachScreens
                 case 4:
                     DeleteCoachScreen.Load();
                     break;
+                case 5:
+                    Program.Load();
+                    break;
 
                 case 0:
-                    Environment.Exit(0);
+                    Program.CloseConnection();
                     break;
 
                 default:
+                    Console.WriteLine("Opção inválida");
+                    Console.ReadKey();
+                    Console.Clear();
                     Load();
                     break;
 

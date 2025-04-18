@@ -1,4 +1,3 @@
-using ClasspionsLeague.Screens.CompetitionScreens;
 using ClasspionsLeague.Screens.CompetitionScreensScreens;
 
 namespace ClasspionsLeague.Screens.CompetitionScreens
@@ -42,15 +41,22 @@ namespace ClasspionsLeague.Screens.CompetitionScreens
                     UpdateCompetitionScreen.Load();
                     break;
 
+                case 5:
+                    Program.Load();
+                    break;
+
                 case 4:
                     DeleteCompetitionScreen.Load();
                     break;
 
                 case 0:
-                    Environment.Exit(0);
+                    Program.CloseConnection();
                     break;
 
                 default:
+                    Console.WriteLine("Opção inválida");
+                    Console.ReadKey();
+                    Console.Clear();
                     Load();
                     break;
 

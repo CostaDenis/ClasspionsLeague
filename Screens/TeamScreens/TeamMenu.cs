@@ -43,11 +43,18 @@ namespace ClasspionsLeague.Screens.TeamScreens
                     DeleteTeamScreen.Load();
                     break;
 
+                case 5:
+                    Program.Load();
+                    break;
+
                 case 0:
-                    Environment.Exit(0);
+                    Program.CloseConnection();
                     break;
 
                 default:
+                    Console.WriteLine("Opção inválida");
+                    Console.ReadKey();
+                    Console.Clear();
                     Load();
                     break;
 

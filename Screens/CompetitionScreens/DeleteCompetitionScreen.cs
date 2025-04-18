@@ -37,12 +37,12 @@ namespace ClasspionsLeague.Screens.CompetitionScreens
                     repository.Delete(competition);
 
                     Console.WriteLine("|-------------------------------|");
-                    Console.WriteLine(" Competição deletado com sucesso ");
+                    Console.WriteLine(" Competição deletada com sucesso ");
                     Console.WriteLine("|-------------------------------|");
                 }
                 else
                 {
-                    Console.WriteLine("Competição não encontrado.");
+                    Console.WriteLine("Competição não encontrada.");
                 }
             }
             catch (Exception ex)

@@ -1,5 +1,4 @@
 using ClasspionsLeague.Repositories;
-using ClasspionsLeague.Screens.TeamScreens;
 using Models;
 
 namespace ClasspionsLeague.Screens.PlayerScreens
@@ -38,7 +37,7 @@ namespace ClasspionsLeague.Screens.PlayerScreens
                     repository.Delete(player);
 
                     Console.WriteLine("|------------------------------|");
-                    Console.WriteLine("   Jogador deletado com sucesso   ");
+                    Console.WriteLine("  Jogador deletado com sucesso  ");
                     Console.WriteLine("|------------------------------|");
                 }
                 else

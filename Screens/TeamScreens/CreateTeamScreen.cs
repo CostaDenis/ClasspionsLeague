@@ -1,6 +1,5 @@
 using Models;
 using ClasspionsLeague.Repositories;
-using System.Data.Common;
 using Microsoft.Data.SqlClient;
 
 namespace ClasspionsLeague.Screens.TeamScreens

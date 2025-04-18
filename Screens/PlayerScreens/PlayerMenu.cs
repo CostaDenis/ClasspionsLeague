@@ -1,6 +1,4 @@
-using ClasspionsLeague.Screens.PlayerScreens;
-
-namespace ClasspionsLeague.Screens.TeamScreens
+namespace ClasspionsLeague.Screens.PlayerScreens
 {
 
     public static class PlayerMenu
@@ -45,11 +43,18 @@ namespace ClasspionsLeague.Screens.TeamScreens
                     DeletePlayerScreen.Load();
                     break;
 
+                case 5:
+                    Program.Load();
+                    break;
+
                 case 0:
-                    Environment.Exit(0);
+                    Program.CloseConnection();
                     break;
 
                 default:
+                    Console.WriteLine("Opção inválida");
+                    Console.ReadKey();
+                    Console.Clear();
                     Load();
                     break;
 

@@ -1,7 +1,5 @@
 using ClasspionsLeague.Enums;
 using ClasspionsLeague.Repositories;
-using ClasspionsLeague.Screens.TeamScreens;
-using Microsoft.Data.SqlClient;
 using Models;
 
 namespace ClasspionsLeague.Screens.PlayerScreens
