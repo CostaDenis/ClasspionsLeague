@@ -1,5 +1,4 @@
 using ClasspionsLeague.Repositories;
-
 using Models;
 
 namespace ClasspionsLeague.Screens.CoachScreens
@@ -130,9 +129,9 @@ namespace ClasspionsLeague.Screens.CoachScreens
                 Console.WriteLine("|--------------------------------|");
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Console.WriteLine("Não foi possível atualizar o treinador");
+                Console.WriteLine($"Não foi possível atualizar o treinador {ex.Message}");
                 Console.ReadKey();
                 Console.Clear();
                 Load();

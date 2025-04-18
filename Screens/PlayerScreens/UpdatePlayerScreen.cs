@@ -159,9 +159,9 @@ namespace ClasspionsLeague.Screens.PlayerScreens
                 Console.WriteLine("|------------------------------|");
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Console.WriteLine("Não foi possível atualizar o jogador");
+                Console.WriteLine($"Não foi possível atualizar o jogador: {ex.Message}");
                 Console.ReadKey();
                 Console.Clear();
                 Load();

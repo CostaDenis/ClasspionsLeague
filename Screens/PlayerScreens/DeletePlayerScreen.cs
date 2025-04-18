@@ -45,9 +45,9 @@ namespace ClasspionsLeague.Screens.PlayerScreens
                     Console.WriteLine("Jogador não encontrado.");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Console.WriteLine("Não foi possível excluir o jogador");
+                Console.WriteLine($"Não foi possível excluir o jogador: {ex.Message}");
                 Console.WriteLine("Id inválido!");
                 Console.ReadKey();
                 Console.Clear();

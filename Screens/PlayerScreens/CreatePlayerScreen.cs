@@ -158,7 +158,7 @@ namespace ClasspionsLeague.Screens.PlayerScreens
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Erro ao cadastrar jogador: " + ex.Message);
+                Console.WriteLine($"Erro ao cadastrar jogador: {ex.Message}");
                 Console.ReadKey();
                 Console.Clear();
                 Load();

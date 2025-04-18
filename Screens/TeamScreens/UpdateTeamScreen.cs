@@ -58,9 +58,9 @@ namespace ClasspionsLeague.Screens.TeamScreens
                 Console.WriteLine("  Time atualizado com sucesso  ");
                 Console.WriteLine("|------------------------------|");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Console.WriteLine("Não foi possível atualizar o time");
+                Console.WriteLine($"Não foi possível atualizar o time: {ex.Message}");
                 Console.ReadKey();
                 Console.Clear();
                 Load();

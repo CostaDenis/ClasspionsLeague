@@ -45,9 +45,9 @@ namespace ClasspionsLeague.Screens.CoachScreens
                     Console.WriteLine("Treinador não encontrado.");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Console.WriteLine("Não foi possível excluir o treinador");
+                Console.WriteLine($"Não foi possível excluir o treinador: {ex.Message}");
                 Console.ReadKey();
                 Console.Clear();
                 Load();

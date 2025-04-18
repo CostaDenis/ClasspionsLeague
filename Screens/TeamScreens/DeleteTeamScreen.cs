@@ -50,9 +50,12 @@ namespace ClasspionsLeague.Screens.TeamScreens
                     Console.WriteLine("Time não encontrado.");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Console.WriteLine("Não foi possível excluir o time");
+                Console.WriteLine($"Não foi possível excluir o time: {ex.Message}");
+                Console.ReadKey();
+                Console.Clear();
+                Load();
             }
 
             Console.WriteLine("");

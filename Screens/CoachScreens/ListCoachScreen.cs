@@ -94,9 +94,9 @@ namespace ClasspionsLeague.Screens.CoachScreens
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Console.WriteLine("Erro ao listar treinadores");
+                Console.WriteLine($"Erro ao listar treinadores: {ex.Message}");
                 Console.ReadKey();
                 Console.Clear();
                 Load();
@@ -170,9 +170,9 @@ namespace ClasspionsLeague.Screens.CoachScreens
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Console.WriteLine("Erro ao listar treinador");
+                Console.WriteLine($"Erro ao listar treinador: {ex.Message}");
                 Console.ReadKey();
                 Console.Clear();
                 Load();
@@ -217,9 +217,9 @@ namespace ClasspionsLeague.Screens.CoachScreens
                     Console.WriteLine("-------------------");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Console.WriteLine("Erro ao listar treinadores");
+                Console.WriteLine($"Erro ao listar treinadores: {ex.Message}");
                 Console.ReadKey();
                 Console.Clear();
                 Load();

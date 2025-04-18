@@ -89,13 +89,20 @@ namespace ClasspionsLeague.Screens.TeamScreens
 
             Console.Clear();
 
-            Console.WriteLine("|-----------------------------|");
-            Console.WriteLine("    Time encontrado na base    ");
-            Console.WriteLine("|-----------------------------|");
+            if (team != null)
+            {
+                Console.WriteLine("|-----------------------------|");
+                Console.WriteLine("    Time encontrado na base    ");
+                Console.WriteLine("|-----------------------------|");
 
-            Console.WriteLine($"Id: {team.Id}");
-            Console.WriteLine($"Nome: {team.Name}");
-            Console.WriteLine($"País: {team.Country}");
+                Console.WriteLine($"Id: {team.Id}");
+                Console.WriteLine($"Nome: {team.Name}");
+                Console.WriteLine($"País: {team.Country}");
+            }
+            else
+            {
+                Console.WriteLine("    Time não encontrado na base ");
+            }
 
             Console.WriteLine("");
             Console.ReadKey();
@@ -135,9 +142,9 @@ namespace ClasspionsLeague.Screens.TeamScreens
                     Console.WriteLine("-------------------");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Console.WriteLine($"Erro ao listar times");
+                Console.WriteLine($"Erro ao listar times: {ex.Message}");
                 Console.ReadKey();
                 Console.Clear();
                 Load();
