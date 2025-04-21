@@ -19,6 +19,8 @@ namespace ClasspionsLeague.Screens.CoachScreens
             Console.WriteLine("2 - Procurar Treinador por Id");
             Console.WriteLine("3 - Procurar Treinador por Nome");
             Console.WriteLine("4 - Procurar Treinador de um time");
+            Console.WriteLine();
+            Console.Write("Opção: ");
             Console.WriteLine("-------------------");
             var option = short.Parse(Console.ReadLine()!);
 

@@ -17,7 +17,9 @@ namespace ClasspionsLeague.Screens.TeamScreens
             Console.WriteLine("O que deseja fazer?");
             Console.WriteLine("1 - Listar todos os Times");
             Console.WriteLine("2 - Procurar Time por Id");
-            Console.WriteLine("2 - Procurar Time por Nome");
+            Console.WriteLine("3 - Procurar Time por Nome");
+            Console.WriteLine();
+            Console.Write("Opção: ");
             Console.WriteLine("-------------------");
             var option = short.Parse(Console.ReadLine()!);
 

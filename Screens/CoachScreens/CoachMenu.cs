@@ -20,6 +20,7 @@ namespace ClasspionsLeague.Screens.CoachScreens
             Console.WriteLine("5 - Voltar ao menu principal");
             Console.WriteLine("0 - Encerrar programa");
             Console.WriteLine();
+            Console.Write("Opção: ");
             Console.WriteLine("-------------------");
 
             var option = short.Parse(Console.ReadLine()!);
@@ -42,6 +43,7 @@ namespace ClasspionsLeague.Screens.CoachScreens
                 case 4:
                     DeleteCoachScreen.Load();
                     break;
+
                 case 5:
                     Program.Load();
                     break;

@@ -1,7 +1,7 @@
 CREATE TABLE [Coach](
     [Id] UNIQUEIDENTIFIER NOT NULL,
     [Name] VARCHAR(50) NOT NULL,
-    [Country] NVARCHAR(30) NOT NULL,
+    [Country] VARCHAR(30) NOT NULL,
     [BirthDate] DATE NOT NULL,
     [TeamId] UNIQUEIDENTIFIER
 

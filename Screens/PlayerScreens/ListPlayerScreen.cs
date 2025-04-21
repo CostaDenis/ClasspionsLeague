@@ -19,6 +19,8 @@ namespace ClasspionsLeague.Screens.PlayerScreens
             Console.WriteLine("2 - Procurar Jogador por Id");
             Console.WriteLine("3 - Procurar Jogador por Nome");
             Console.WriteLine("4 - Procurar Jogadores de um time");
+            Console.WriteLine();
+            Console.Write("Opção: ");
             Console.WriteLine("-------------------");
             var option = short.Parse(Console.ReadLine()!);
 
@@ -58,7 +60,7 @@ namespace ClasspionsLeague.Screens.PlayerScreens
                         Console.Clear();
                         Load();
                     }
-                    ListWithTeam(teamId);
+                    ListByTeamId(teamId);
                     break;
 
                 default:
@@ -141,43 +143,6 @@ namespace ClasspionsLeague.Screens.PlayerScreens
             PlayerMenu.Load();
         }
 
-        public static void ListWithTeam(Guid id)
-        {
-
-            try
-            {
-                var repository = new PlayerRepository(Database.Connection);
-                var players = repository.GetByTeamId(id);
-
-                Console.WriteLine("|-----------------------------|");
-                Console.WriteLine(" Jogadores disponíveis na base ");
-                Console.WriteLine("|-----------------------------|");
-
-                foreach (var player in players)
-                {
-                    Console.WriteLine($"Id: {player.Id}");
-                    Console.WriteLine($"Nome: {player.Name}");
-                    Console.WriteLine($"País: {player.Country}");
-                    Console.WriteLine($"Data de Nascimento: {player.BirthDate.ToString("dd/MM/yyyy")}");
-                    Console.WriteLine($"Posição: {player.Position}");
-                    Console.WriteLine($"Id do Time: {player.TeamId}");
-                    Console.WriteLine("-------------------");
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Erro ao listar jogadores: {ex.Message}");
-                Console.ReadKey();
-                Console.Clear();
-                Load();
-            }
-
-            Console.WriteLine("");
-            Console.ReadKey();
-            Console.Clear();
-            PlayerMenu.Load();
-        }
-
         public static void ListWithName(string name)
         {
 
@@ -225,5 +190,43 @@ namespace ClasspionsLeague.Screens.PlayerScreens
             Console.Clear();
             PlayerMenu.Load();
         }
+
+        public static void ListByTeamId(Guid id)
+        {
+
+            try
+            {
+                var repository = new PlayerRepository(Database.Connection);
+                var players = repository.GetByTeamId(id);
+
+                Console.WriteLine("|-----------------------------|");
+                Console.WriteLine(" Jogadores disponíveis na base ");
+                Console.WriteLine("|-----------------------------|");
+
+                foreach (var player in players)
+                {
+                    Console.WriteLine($"Id: {player.Id}");
+                    Console.WriteLine($"Nome: {player.Name}");
+                    Console.WriteLine($"País: {player.Country}");
+                    Console.WriteLine($"Data de Nascimento: {player.BirthDate.ToString("dd/MM/yyyy")}");
+                    Console.WriteLine($"Posição: {player.Position}");
+                    Console.WriteLine($"Id do Time: {player.TeamId}");
+                    Console.WriteLine("-------------------");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao listar jogadores: {ex.Message}");
+                Console.ReadKey();
+                Console.Clear();
+                Load();
+            }
+
+            Console.WriteLine("");
+            Console.ReadKey();
+            Console.Clear();
+            PlayerMenu.Load();
+        }
+
     }
 }

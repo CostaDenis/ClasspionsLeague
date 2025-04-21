@@ -20,6 +20,8 @@ namespace ClasspionsLeague.Screens.CompetitionScreensScreens
             Console.WriteLine("2 - Procurar Competição por Id");
             Console.WriteLine("3 - Procurar Competição por Nome");
             Console.WriteLine("4 - Procurar Competições com Times");
+            Console.WriteLine();
+            Console.Write("Opção: ");
             Console.WriteLine("-------------------");
             var option = short.Parse(Console.ReadLine()!);
 

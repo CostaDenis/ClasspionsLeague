@@ -67,22 +67,18 @@ namespace ClasspionsLeague
 
         public static void OpenConnection()
         {
-            if (Database.Connection.State == System.Data.ConnectionState.Closed)
-            {
-                Database.Connection = new SqlConnection(CONNECTION_STRING);
-                Database.Connection.Open();
-            }
+            Database.Connection = new SqlConnection(CONNECTION_STRING);
+            Database.Connection.Open();
         }
 
         public static void CloseConnection()
         {
-            if (Database.Connection.State == System.Data.ConnectionState.Open)
-            {
-                Database.Connection.Dispose();
-                Console.WriteLine("Conexão encerrada com sucesso!");
-                Console.ReadKey();
-                Environment.Exit(0);
-            }
+            Database.Connection.Dispose();
+            Console.WriteLine("Conexão encerrada com sucesso...");
+            Console.WriteLine("Aplicação encerrada!");
+            Console.ReadKey();
+            Environment.Exit(0);
+
         }
     }
 }

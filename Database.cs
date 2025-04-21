@@ -5,6 +5,6 @@ namespace ClasspionsLeague
 
     public static class Database
     {
-        public static SqlConnection Connection;
+        public static SqlConnection Connection = new SqlConnection();
     }
 }

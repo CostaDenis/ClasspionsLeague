@@ -22,6 +22,7 @@ namespace ClasspionsLeague.Screens.CompetitionScreens
             Console.WriteLine("5 - Voltar ao menu principal");
             Console.WriteLine("0 - Encerrar programa");
             Console.WriteLine();
+            Console.Write("Opção: ");
             Console.WriteLine("-------------------");
 
             var option = short.Parse(Console.ReadLine()!);
@@ -41,12 +42,12 @@ namespace ClasspionsLeague.Screens.CompetitionScreens
                     UpdateCompetitionScreen.Load();
                     break;
 
-                case 5:
-                    Program.Load();
-                    break;
-
                 case 4:
                     DeleteCompetitionScreen.Load();
+                    break;
+
+                case 5:
+                    Program.Load();
                     break;
 
                 case 0:
