@@ -1,6 +1,6 @@
 # Classpions League
 
-Classpions League é uma aplicação de console desenvolvida em C#, com temática de futebol, que realiza operações de CRUD utilizando o ORM Dapper para o gerenciamento de dados.
+Classpions League é uma aplicação de console desenvolvida em C#, com temática voltada para o futebol da primeira divisão da Espanha, que realiza operações de CRUD utilizando o ORM Dapper para o gerenciamento de dados.
 
 O projeto foi realizado com os seguintes objetivos:
 - Praticar SQL.
